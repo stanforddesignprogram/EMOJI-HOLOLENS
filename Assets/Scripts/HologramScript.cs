@@ -3,10 +3,20 @@ using UnityEngine;
 
 public class HologramScript : MonoBehaviour {
 
+    [System.Serializable]
+    private class UpdateData
+    {
+        public float pulseDuration;
+        public float opacity;
+        public float fadeDuration;
+    }
+
     private const string Url = "10.34.85.21:8080/data.txt";
     private const int PingsPerSecond = 2;
 
-    private float data = 1.0f; // Starting data
+    [SerializeField]
+    private UpdateData updateData;
+
 
     // Use this for initialization
     void Start () {
@@ -16,8 +26,8 @@ public class HologramScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //print(data);
-        Pulse(gameObject, data);
+        Pulse(updateData.pulseDuration);
+        Fade(updateData.opacity, updateData.fadeDuration);
     }
 
     void QueryServer()
@@ -31,14 +41,20 @@ public class HologramScript : MonoBehaviour {
     {
         yield return www;
         string text = www.text;
-        if (text != null && text != "") data = float.Parse(text);
+        if (text != null && text != "")
+           updateData = JsonUtility.FromJson<UpdateData>(text);
     }
 
-    void Pulse(GameObject gameObject, float time)
+    void Pulse(float duration)
     {
         //Hashtable hash = new Hashtable();
         //hash.Add("amount", new Vector3(0.05f, 0.05f, 0.05f));
         //hash.Add("time", time);
-        iTween.PunchScale(gameObject, new Vector3(0.05f, 0.05f, 0.05f), time);
+        iTween.PunchScale(gameObject, new Vector3(0.05f, 0.05f, 0.05f), duration);
+    }
+
+    void Fade(float alpha, float duration)
+    {
+        iTween.FadeUpdate(gameObject, alpha, duration);
     }
 }

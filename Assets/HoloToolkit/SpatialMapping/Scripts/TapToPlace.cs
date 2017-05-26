@@ -62,6 +62,8 @@ namespace HoloToolkit.Unity.SpatialMapping
                 Debug.LogError("This script expects that you have a SpatialMappingManager component in your scene.");
             }
 
+            spatialMappingManager.DrawVisualMeshes = false;
+
             if (anchorManager != null && spatialMappingManager != null)
             {
                 anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
