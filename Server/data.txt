@@ -1,5 +1,5 @@
 {
   "pulseDuration": 1.0,
-  "opacity": 1.0,
-  "fadeDuration": 3.0
+  "opacity": 0.5,
+  "fadeDuration": 2.0
 }
