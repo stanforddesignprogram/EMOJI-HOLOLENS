@@ -6,9 +6,9 @@ public class HologramScript : MonoBehaviour {
     [System.Serializable]
     private class UpdateData
     {
-        public float pulseDuration;
-        public float opacity;
-        public float fadeDuration;
+        public float pulseDuration = 1.0f;
+        public float opacity = 1.0f;
+        public float fadeDuration = 3.0f;
     }
 
     private const string Url = "10.34.85.21:8080/data.txt";
