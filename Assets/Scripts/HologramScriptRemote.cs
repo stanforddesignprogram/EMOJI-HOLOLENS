@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class HologramScript : MonoBehaviour {
+public class HologramScriptRemote : MonoBehaviour {
 
     [System.Serializable]
     private class UpdateData
