@@ -396,14 +396,14 @@ PlayerSettings:
   additionalIl2CppArgs: 
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: EMOJI-HOLOLENS2
+  metroPackageName: EMOJI-HOLOLENS
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 8079543d00f4d301
-  metroApplicationDescription: EMOJI-HOLOLENS2
+  metroApplicationDescription: EMOJI-HOLOLENS
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
