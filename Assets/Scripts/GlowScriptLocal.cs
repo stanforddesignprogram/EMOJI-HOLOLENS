@@ -2,8 +2,7 @@
 using UnityEngine;
 
 public class GlowScriptLocal : MonoBehaviour {
-    //protected HoloToolkit.Unity.WorldAnchorManager anchorManager; // ???
-
+    
     private SphereCollider m_sc;
     private Light m_light;
     private TapToPlace m_ttp;
@@ -37,7 +36,7 @@ public class GlowScriptLocal : MonoBehaviour {
         currColor = m_light.color;
         targetColorScale = currColorScale;
         lightRangeDelta = (MaxLightRange - MinLightRange) * GlobalDeltaPerChange; // Default each press moves 10% of range
-	}
+    }
 
     // Update is called once per frame
     void Update() {
@@ -45,12 +44,12 @@ public class GlowScriptLocal : MonoBehaviour {
         if (!m_ttp.IsBeingPlaced) return;
 
         // Clones the current object
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown("d")) // Virtual Input -> Hololens for some reason doesn't recognize KeyCode.D
         {
             GameObject glowClone = Instantiate(gameObject);
-            m_ttp.SavedAnchorFriendlyName = "GlowClone_" + System.DateTime.Now.ToString("yyyyMMddhhmmss");
+            print(glowClone.ToString());
+            glowClone.GetComponent<TapToPlace>().SavedAnchorFriendlyName = "GlowClone_" + System.DateTime.Now.ToString("yyyyMMddhhmmss");
             glowClone.GetComponent<TapToPlace>().IsBeingPlaced = false;
-            HoloToolkit.Unity.WorldAnchorManager.Instance.AttachAnchor(glowClone, m_ttp.SavedAnchorFriendlyName); /// ???
         }
 
         if (GlowTag != "AllPrivate")
@@ -83,5 +82,5 @@ public class GlowScriptLocal : MonoBehaviour {
             }
             m_light.color = currColor;
         }
-	}
+    }
 }

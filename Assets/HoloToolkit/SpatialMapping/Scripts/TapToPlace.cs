@@ -20,7 +20,7 @@ namespace HoloToolkit.Unity.SpatialMapping
     public class TapToPlace : MonoBehaviour, IInputClickHandler
     {
         [Tooltip("Supply a friendly name for the anchor as the key name for the WorldAnchorStore.")]
-        public string SavedAnchorFriendlyName = "SavedAnchorFriendlyName";
+        public string SavedAnchorFriendlyName = "UninitializedAnchor_" + System.DateTime.Now.ToString("yyyyMMddhhmmss");
 
         [Tooltip("Place parent on tap instead of current game object.")]
         public bool PlaceParentOnTap;
