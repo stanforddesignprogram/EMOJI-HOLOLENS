@@ -47,7 +47,6 @@ public class GlowScriptLocal : MonoBehaviour {
         if (Input.GetKeyDown("d")) // Virtual Input -> Hololens for some reason doesn't recognize KeyCode.D
         {
             GameObject glowClone = Instantiate(gameObject);
-            print(glowClone.ToString());
             glowClone.GetComponent<TapToPlace>().SavedAnchorFriendlyName = "GlowClone_" + System.DateTime.Now.ToString("yyyyMMddhhmmss");
             glowClone.GetComponent<TapToPlace>().IsBeingPlaced = false;
         }
