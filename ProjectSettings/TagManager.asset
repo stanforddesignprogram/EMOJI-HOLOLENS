@@ -7,6 +7,11 @@ TagManager:
   - AllPrivate
   - ValencePrivate
   - AllPublic
+  - 1Glow
+  - 2Glow
+  - 3Glow
+  - 4Glow
+  - 5Glow
   layers:
   - Default
   - TransparentFX
