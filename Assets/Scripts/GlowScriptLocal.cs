@@ -14,7 +14,7 @@ public class GlowScriptLocal : MonoBehaviour {
     private string GlowTag;
 
     private Color HighColor = Color.green;
-    private Color LowColor = Color.blue;
+    private Color LowColor = Color.red;
     private Color PrivateColor = Color.white;
 
     [SerializeField]
@@ -72,7 +72,7 @@ public class GlowScriptLocal : MonoBehaviour {
             if (currColorScale > 0.5f)
             {
                 relativeScale = (1.0f - relativeScale) / 0.5f;
-                currColor.b = relativeScale;
+                currColor.r = relativeScale;
             }
             else
             {
