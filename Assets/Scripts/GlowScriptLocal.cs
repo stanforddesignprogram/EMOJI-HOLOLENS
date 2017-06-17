@@ -15,7 +15,7 @@ public class GlowScriptLocal : MonoBehaviour {
     private string GlowTag;
 
     private Color HighColor = Color.green;
-    private Color LowColor = Color.red;
+    //private Color LowColor = Color.red;
     private Color PrivateColor = Color.white;
 
     [SerializeField]
@@ -89,6 +89,7 @@ public class GlowScriptLocal : MonoBehaviour {
 
             float v2 = 0.0f;
             currColorScale = Mathf.SmoothDamp(currColorScale, targetColorScale, ref v2, GlobalSmoothTime);
+
             float relativeScale = currColorScale;
             if (currColorScale > 0.5f)
             {
