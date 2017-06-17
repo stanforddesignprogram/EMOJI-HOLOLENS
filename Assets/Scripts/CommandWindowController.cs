@@ -20,7 +20,7 @@ public class CommandWindowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("r")) // Virtual Input -> Hololens for some reason doesn't recognize KeyCode.R
+        if (Input.GetKeyDown("u")) // Virtual Input -> Hololens for some reason doesn't recognize KeyCode.U
         {
             anchorManager.RemoveAllAnchors();
             debugText.SetActive(true);
